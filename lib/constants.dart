@@ -14,3 +14,8 @@ const UnitTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const ResultTextStyle = TextStyle(
+  fontSize: 75.0,
+  fontWeight: FontWeight.w800,
+);
+
