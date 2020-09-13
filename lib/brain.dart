@@ -10,7 +10,7 @@ class Calculator {
 
   String calculatePayment() {
     _payment = distance / ability * gasoline;
-    return _payment.toStringAsFixed(1);
+    return _payment.toString();
   }
 
 }

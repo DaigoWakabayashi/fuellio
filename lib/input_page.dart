@@ -1,3 +1,4 @@
+import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -12,9 +13,13 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  int distance = 500;
-  int ability = 10;
-  int gasoline = 130;
+  final distanceController = TextEditingController();
+  final abilityController = TextEditingController();
+  final gasolineController = TextEditingController();
+
+  // int inputDistance = 600;
+  // int inputAbility = 15;
+  // int inputGasoline = 140;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +50,7 @@ class _InputPageState extends State<InputPage> {
                     keyboardType: TextInputType.number,
                     textAlign: TextAlign.right,
                     style: LargeTextStyle,
+                    controller: distanceController,
                   ),
                 ),
                 Text(
@@ -69,6 +75,7 @@ class _InputPageState extends State<InputPage> {
                     keyboardType: TextInputType.number,
                     textAlign: TextAlign.right,
                     style: LargeTextStyle,
+                    controller: abilityController,
                   ),
                 ),
                 Text(
@@ -95,6 +102,7 @@ class _InputPageState extends State<InputPage> {
                     keyboardType: TextInputType.number,
                     textAlign: TextAlign.right,
                     style: LargeTextStyle,
+                    controller: gasolineController,
                   ),
                 ),
                 Text(
@@ -117,7 +125,9 @@ class _InputPageState extends State<InputPage> {
               child: Text('算出する', style: LargeTextStyle),
               onPressed: () {
                 Calculator calc = Calculator(
-                    distance: distance, ability: ability, gasoline: gasoline);
+                    distance: int.parse(distanceController.text),
+                    ability: int.parse(abilityController.text),
+                    gasoline: int.parse(gasolineController.text));
                 Navigator.push(
                   context,
                   MaterialPageRoute(
