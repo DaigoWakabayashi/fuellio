@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
 import 'results_page.dart';
 
@@ -15,10 +16,12 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Fuellio',
-        style: LargeTextStyle,),
+        style: GoogleFonts.aBeeZee(
+          fontWeight: FontWeight.bold,
+        ),),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Expanded(
             child: Row(
@@ -34,6 +37,8 @@ class _InputPageState extends State<InputPage> {
                   width: 200.0,
                   child: TextField(
                     keyboardType: TextInputType.number,
+                    textAlign: TextAlign.right,
+                    style: LargeTextStyle,
                   ),
                 ),
                 Text('km   ',
@@ -56,6 +61,8 @@ class _InputPageState extends State<InputPage> {
                   width: 200.0,
                   child: TextField(
                     keyboardType: TextInputType.number,
+                    textAlign: TextAlign.right,
+                    style: LargeTextStyle,
                   ),
                 ),
                 Text('km/L',
@@ -68,7 +75,7 @@ class _InputPageState extends State<InputPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Icon(
-                    FontAwesomeIcons.car,
+                    FontAwesomeIcons.gasPump,
                 ),
                 Text('ガソリン',
                   style: LargeTextStyle,
@@ -77,6 +84,8 @@ class _InputPageState extends State<InputPage> {
                   width: 200.0,
                   child: TextField(
                     keyboardType: TextInputType.number,
+                    textAlign: TextAlign.right,
+                    style: LargeTextStyle,
                   ),
                 ),
                 Text('円/L',
@@ -85,7 +94,7 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           SizedBox(
-            height: 200.0,
+            height: 100.0,
           ),
           SizedBox(
             width: 150.0,
@@ -95,7 +104,7 @@ class _InputPageState extends State<InputPage> {
               shape: StadiumBorder(),
               color: Colors.red,
               child: Text('算出する',
-              style: TextStyle(fontSize: 25),),
+              style: LargeTextStyle),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -103,7 +112,10 @@ class _InputPageState extends State<InputPage> {
                 );
               },
             ),
-          )
+          ),
+          SizedBox(
+            height: 100.0,
+          ),
         ],
       ),
     );
