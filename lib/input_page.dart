@@ -13,13 +13,10 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+
   final distanceController = TextEditingController();
   final abilityController = TextEditingController();
   final gasolineController = TextEditingController();
-
-  // int inputDistance = 600;
-  // int inputAbility = 15;
-  // int inputGasoline = 140;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +44,7 @@ class _InputPageState extends State<InputPage> {
                 Container(
                   width: 200.0,
                   child: TextField(
+                    autofocus: true,
                     keyboardType: TextInputType.number,
                     textAlign: TextAlign.right,
                     style: LargeTextStyle,
@@ -113,7 +111,7 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           SizedBox(
-            height: 100.0,
+            height: 35.0,
           ),
           SizedBox(
             width: 150.0,
@@ -122,7 +120,7 @@ class _InputPageState extends State<InputPage> {
               textColor: Colors.white,
               shape: StadiumBorder(),
               color: Colors.red,
-              child: Text('算出する', style: LargeTextStyle),
+              child: Text('計算する', style: LargeTextStyle),
               onPressed: () {
                 Calculator calc = Calculator(
                     distance: int.parse(distanceController.text),
@@ -139,7 +137,7 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           SizedBox(
-            height: 100.0,
+            height: 35.0,
           ),
         ],
       ),
